@@ -16,6 +16,8 @@ fn int main(String[] args) {
     ControllerParadise paradise;
     paradise.init();
 
+    routes::add_route("/example/{name}", &no_controller);
+
     server::startServer(config)!!;
 	return 0;
 }
