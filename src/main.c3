@@ -18,6 +18,12 @@ fn int main(String[] args) {
 
     routes::add_route("/example/{name}", &no_controller);
 
+    routes::add_route("/example/config", &file_no_controller);
+    routes::add_tag("/example/config", "file", "config.json"); //adding @File tag
+
+    routes::add_route("/example/src", &folder_no_controller);
+    routes::add_tag("/example/src", "folder", "."); //adding @Folder tag
+
     server::startServer(config)!!;
 	return 0;
 }
